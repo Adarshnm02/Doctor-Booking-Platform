@@ -1,10 +1,15 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import UserRoutes from './Routes/UserRoutes'
 
 const App = () => {
   return (
-    <div>
-      <h1 className='bg-amber-400 text-3xl text-gray-50 hover:text-8xl'>Hello World</h1>
-    </div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<div><h1>Welcome to Doctor Booking Platform's Landing Page</h1></div>}/>
+          <Route path='/*' element={<UserRoutes />} />
+        </Routes>
+      </Router>
   )
 }
 
